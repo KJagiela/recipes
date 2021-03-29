@@ -1,0 +1,8 @@
+.*
+
+!.devops/docker
+!.env
+
+!backend/*
+backend/.pytest_cache/
+backend/.mypy_cache/
