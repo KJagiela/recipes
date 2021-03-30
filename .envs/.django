@@ -1,0 +1,14 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/app/.ipython
+WERKZEUG_DEBUG_PIN=off
+
+# Poetry
+# ------------------------------------------------------------------------------
+POETRY_VERSION=1.1.5
+POETRY_CACHE_DIR=/var/cache/pypoetry
+
+# Django
+# ------------------------------------------------------------------------------
+DJANGO_SETTINGS_MODULE=config.settings.local

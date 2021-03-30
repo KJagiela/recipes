@@ -301,7 +301,6 @@ backend/apps/media/
 
 .ipython/
 .env
-.envs/*
 !.envs/.local/
 
 # Docker-compose override file is user-customized
@@ -311,7 +310,7 @@ docker-compose.override.yml
 shared/media/*
 shared/static_files/*
 shared/postgresql/pgdata/*
-
+*sqlite3
 
 # Test reports
 .tests_reports
