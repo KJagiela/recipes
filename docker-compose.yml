@@ -1,0 +1,27 @@
+---
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - ./shared/postgresql:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      # We set PGDATA to a subfolder because Postgres needs this folder to be
+      # empty, and we have a .gitkeep file there
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  app:
+    # TODO: add image when pushed
+    # image: ""
+    restart: "always"
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    volumes:
+      - ./shared/static:/app/static
+      - ./shared/media:/app/media
+    depends_on:
+      - db
