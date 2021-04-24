@@ -1,14 +1,16 @@
 name: Test
 on:
   pull_request:
-  push: { branches: master }
+  push:
+    branches:
+      - master
 
 jobs:
   test:
     name: Run test suite
     runs-on: ubuntu-latest
     env:
-      COMPOSE_FILE: .devops/docker/docker-compose.ci.yml
+      COMPOSE_FILE: docker-compose.ci.yml
 
     steps:
     - name: Checkout code
