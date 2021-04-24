@@ -2,6 +2,7 @@
 version: '3.8'
 services:
   db:
+    # TODO: uid no longer used - fix it
     user: "!!UID!!"
     restart: unless-stopped
     ports:

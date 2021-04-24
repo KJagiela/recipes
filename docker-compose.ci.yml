@@ -1,6 +1,12 @@
 ---
 version: '3.8'
 services:
+  db:
+    image: postgres:13
+    env_file:
+      - ./.envs/.postgres
+
+
   app:
     build:
       context: .
