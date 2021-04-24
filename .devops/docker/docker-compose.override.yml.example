@@ -7,17 +7,19 @@ services:
     ports:
       - "5444:5432"
     env_file:
-      - ./.envs/.local/.postgres
+      - ./.envs/.postgres
 
   app:
     user: "!!UID!!"
     build:
+      context: .
+      dockerfile: .devops/docker/Dockerfile
       target: development-stage
       args:
         DJANGO_ENV: development
         USER_ID: "!!UID!!"
     env_file:
-      - ./.envs/.local/.django
-      - ./.envs/.local/.postgres
+      - ./.envs/.django
+      - ./.envs/.postgres
     stdin_open: true
     tty: true
