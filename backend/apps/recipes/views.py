@@ -1,4 +1,4 @@
-from rest_framework import viewsets, exceptions, status, generics
+from rest_framework import viewsets, exceptions, status
 
 from .models import Recipe, RecipeIngredient
 from .serializers import RecipeSerializer
