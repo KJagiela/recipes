@@ -53,10 +53,6 @@ RUN chmod +x /entrypoint.sh
 COPY ./.devops/docker/start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Create the user and group to run the Django application as
-RUN addgroup --system --gid ${USER_ID} django \
-    && adduser --system --home ${HOME} --uid ${USER_ID} --ingroup django django
-
 WORKDIR /app
 
 # Install python dependencies
@@ -75,8 +71,6 @@ ENTRYPOINT ["/usr/bin/tini", "--", "/entrypoint.sh"]
 CMD ["/start.sh"]
 
 COPY ./backend /app
-#RUN chown -R django /app /home/django
-#USER django
 
 
 FROM development-stage as production-stage
