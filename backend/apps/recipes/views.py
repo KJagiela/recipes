@@ -1,10 +1,11 @@
 from rest_framework import viewsets, exceptions, status, generics
 
-from .models import Recipe, Ingredient, RecipeIngredient
+from .models import Recipe, RecipeIngredient
 from .serializers import RecipeSerializer
 # TODO: get recipe by link
 # TODO: get recipe by direct post
 # TODO get recipe from a photo
+from apps.ingredients.models import Ingredient
 
 
 class MissingIngredientsError(exceptions.APIException):
@@ -25,33 +26,20 @@ class RecipesViewSet(viewsets.ModelViewSet):
             **serializer.validated_data,
         )
         missing_ingredients = []
-        for ingredient in ingredients:
+        for ingredient_candidate in ingredients:
+            ingredient_name = ingredient_candidate['name'].lower()
             try:
-                ingr_object = Ingredient.objects.get(name=ingredient['name'].lower())
+                ingredient = Ingredient.objects.get(name=ingredient_name)
             except Ingredient.DoesNotExist:
                 # todo: AI to create category if not exists (user confirmation required)
-                missing_ingredients.append(ingredient['name'].lower())
+                missing_ingredients.append(ingredient_candidate['name'].lower())
                 continue
-            # todo translate ingredients from polish to english
             RecipeIngredient.objects.create(
                 recipe=recipe,
-                ingredient=ingr_object,
+                ingredient=ingredient,
                 amount=ingredients['amount'],
                 unit=ingredients['unit'],
             )
         if missing_ingredients:
             raise MissingIngredientsError(missing_ingredients)
         recipe.save()
-
-
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-
-class CategoriesListView(generics.ListView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer

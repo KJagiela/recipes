@@ -10,9 +10,3 @@ class RecipeSerializer(serializers.ModelSerializer):
             'ingredients',
             'steps',
         ]
-
-class CategorySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = models.Category
-        fields = ['name']

@@ -25,3 +25,10 @@ services:
       - ./shared/media:/app/media
     depends_on:
       - db
+
+  documentation:
+    image: swaggerapi/swagger-generator
+    volumes:
+    - ./documentation:/app
+    ports:
+      - 8888:8888
