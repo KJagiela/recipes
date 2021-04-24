@@ -1,0 +1,13 @@
+---
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devops/docker/Dockerfile
+      target: development-stage
+      args:
+        DJANGO_ENV: development
+    env_file:
+      - ./.envs/.django
+      - ./.envs/.postgres

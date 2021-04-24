@@ -74,8 +74,9 @@ RUN poetry config virtualenvs.create false \
 ENTRYPOINT ["/usr/bin/tini", "--", "/entrypoint.sh"]
 CMD ["/start.sh"]
 
-RUN chown -R django /app /home/django
-USER django
+COPY ./backend /app
+#RUN chown -R django /app /home/django
+#USER django
 
 
 FROM development-stage as production-stage
