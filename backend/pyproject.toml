@@ -48,6 +48,7 @@ isort = "^4.3.21"
 django-debug-toolbar = "^3.2"
 django-test-migrations = "^1.1.0"
 django-coverage-plugin = "^1.6.0"
+drf-spectacular = "^0.15.1"
 
 safety = "^1.10.3"
 django-silk = "^4.1.0"
