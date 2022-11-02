@@ -7,7 +7,7 @@ authors = ["Kasia"]
 [tool.poetry.dependencies]
 python = "^3.9"
 
-Django = "^3.1.7"
+Django = "^4.1.3"
 django-environ = "^0.8.1"
 django-extensions = "^3.1.0"
 djangorestframework = "^3.12.4"
