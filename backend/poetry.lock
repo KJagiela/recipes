@@ -1448,14 +1448,14 @@ tests = ["mock"]
 
 [[package]]
 name = "pytest-mock"
-version = "3.5.1"
+version = "3.10.0"
 description = "Thin-wrapper around the mock package for easier use with pytest"
 category = "dev"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.7"
 files = [
-    {file = "pytest-mock-3.5.1.tar.gz", hash = "sha256:a1e2aba6af9560d313c642dae7e00a2a12b022b80301d9d7fc8ec6858e1dd9fc"},
-    {file = "pytest_mock-3.5.1-py3-none-any.whl", hash = "sha256:379b391cfad22422ea2e252bdfc008edd08509029bcde3c25b2c0bd741e0424e"},
+    {file = "pytest-mock-3.10.0.tar.gz", hash = "sha256:fbbdb085ef7c252a326fd8cdcac0aa3b1333d8811f131bdcc701002e1be7ed4f"},
+    {file = "pytest_mock-3.10.0-py3-none-any.whl", hash = "sha256:f4c973eeae0282963eb293eb173ce91b091a79c1334455acfac9ddee8a1c784b"},
 ]
 
 [package.dependencies]
@@ -1961,4 +1961,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "b630c27890cf9363569f39f0668819782ab452ec0d292638c98aa99ab6899f71"
+content-hash = "dbfb9fba3debec96ac8ce4e52f9e2d734df862908f7a6250af4cfdfeefba1f7a"
