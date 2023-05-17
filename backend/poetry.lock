@@ -347,18 +347,18 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-coverage-plugin"
-version = "1.8.0"
+version = "3.0.0"
 description = "Django template coverage.py plugin"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "django_coverage_plugin-1.8.0.tar.gz", hash = "sha256:d53cbf3828fd83d6b89ff7292c6805de5274e36411711692043e67bcde25ae0c"},
+    {file = "django_coverage_plugin-3.0.0-py3-none-any.whl", hash = "sha256:245ecd6e91e5be7a66e0f811fd57091c46b55c0eb85c7fe1a1e4aebca9842a5f"},
+    {file = "django_coverage_plugin-3.0.0.tar.gz", hash = "sha256:c063d8d49ba2da30fe95d91cf3f0f9f659b55c3f80d4a029d619b2b3144b1206"},
 ]
 
 [package.dependencies]
 coverage = "*"
-six = ">=1.4.0"
 
 [[package]]
 name = "django-debug-toolbar"
@@ -1950,4 +1950,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0080d5e992fd39a2841a4591c324da007881f4e3889170ed63f3952cb840f952"
+content-hash = "6c3f5cb996472219a88fcc423e3094596f5bf3e1999e522adabde52f34bc468a"
